@@ -1,21 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//css
+import './index.css'
+
 
 // Nested Component  
-function Greeting(){
+function Booklist(){
   return (
-   <div>
-    <Person/>
-    <Message/>
-   </div>
+   <section className ='booklist'>
+    <Book/>
+    <Book/>
+    <Book/>
+   </section>
   ) 
 
 }
 
-const Person =() => <h1>Hello World!!</h1>
-const Message =() => {
-  return <p>This is a message</p>
+const Book =() => {
+  return (
+  <article className ='book'>
+    <Image> </Image>
+    <Author/>
+    <Title/>
+  </article>)
 }
-ReactDOM.render(<Greeting/>, document.getElementById('root')); 
+
+const Image =() => <img src="https://images-na.ssl-images-amazon.com/images/I/613KCs7szvL._AC_UL210_SR195,210_.jpg" alt="book" />
+const Author =() => <h1>Coolen Hover</h1>
+const Title =() => <h2>Ugly love</h2>
+
+
+ReactDOM.render(<Booklist/>, document.getElementById('root')); 
 
