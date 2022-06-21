@@ -40,13 +40,18 @@ function Booklist(){
 }
 // another way to include props
 const Book =(props) => {  
-  //
+  //attribute, eventhandler 
+  // onclick 
+  const clickHandler  =()=>{
+    alert('Hello world')
+  }
   const {img, title, author} = props.book;
   return (
   <article className ='book'>
     <img src= {img} alt="book" />
     <h1>{author}</h1>
     <h2>{ title }</h2>
+    <button type="button" onClick ={clickHandler}>Reference example</button>
   </article>)
 }
  
