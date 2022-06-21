@@ -8,38 +8,45 @@ import './index.css'
 const firstbook = {
   img: 'https://images-na.ssl-images-amazon.com/images/I/613KCs7szvL._AC_UL210_SR195,210_.jpg',
   title: 'Ugly love',
-  author: 'Coolen Hover'
-}
+  author: 'Coolen Hover',
+};
 
-// const secondBook{
-//   img: 'https://m.media-amazon.com/images/P/198219734X.01._SCLZZZZZZZ_SX500_.jpg', 
-//   title: 'The terminal list', 
-//   author: 'Jack Carr'
-// }
+const secondBook ={
+  img: 'https://images-na.ssl-images-amazon.com/images/I/71nCY2F3UKL._AC_UL210_SR195,210_.jpg', 
+  title: 'The Seven Husbands of Evelyn Hugo: A Novel', 
+  author: 'Taylor Jenkins',
+}
 
 function Booklist(){
   return (
    <section className ='booklist'>
-    <Book 
-      img={firstbook.img} 
-      title={firstbook.title}
-      author= {firstbook.author}/>
-    {/* <Book
+    <Book
+       img={firstbook.img} 
+       title={firstbook.title}
+       author= {firstbook.author}
+    >
+      <p>
+        My first react project
+      </p>
+
+    </Book>
+     
+    <Book
       img={secondBook.img}
       title={secondBook.title}
-      author={secondBook.author}/> */}
+      author={secondBook.author}/>
    </section>
   ) 
 
 }
-
-const Book =(props) => {  
-  console.log(props)
+// another way to include props
+const Book =({img, title, author, children}) => {  
   return (
   <article className ='book'>
-    <img src= {props.img} alt="book" />
-    <h1>{props.author}</h1>
-    <h2>{ props.title }</h2>
+    <img src= {img} alt="book" />
+    <h1>{author}</h1>
+    <h2>{ title }</h2>
+    {children}
   </article>)
 }
  
