@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-//css
 import './index.css'
-
-
-// Nested Component  
+ 
 function Booklist(){
   return (
    <section className ='booklist'>
-    <Book/>
-    <Book/>
     <Book/>
    </section>
   ) 
@@ -18,18 +12,15 @@ function Booklist(){
 }
 
 const Book =() => {
+  const Title = 'Ugly love'; 
+  const author = 'Coolen Hover'
   return (
   <article className ='book'>
-    <Image> </Image>
-    <Author/>
-    <Title/>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/613KCs7szvL._AC_UL210_SR195,210_.jpg" alt="book" />
+    <h1>{author.toUpperCase()}</h1>
+    <h2>{ Title }</h2>
   </article>)
 }
-
-const Image =() => <img src="https://images-na.ssl-images-amazon.com/images/I/613KCs7szvL._AC_UL210_SR195,210_.jpg" alt="book" />
-const Author =() => <h1>Coolen Hover</h1>
-const Title =() => <h2>Ugly love</h2>
-
-
+ 
 ReactDOM.render(<Booklist/>, document.getElementById('root')); 
 
