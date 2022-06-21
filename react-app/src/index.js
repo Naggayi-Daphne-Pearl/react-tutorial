@@ -31,26 +31,25 @@ const books =  [
 function Booklist(){
   return (
    <section className ='booklist'>
-    {books.map((book)=>{
-      return <Book key={book.id} book={book}></Book>
+    {books.map((book, index)=>{
+      return <Book key={book.id} {...book}></Book>
     })}
    </section>
   ) 
 
 }
 // another way to include props
-const Book =(props) => {  
+const Book =({ img, title, author}) => {  
   //attribute, eventhandler 
   // onclick 
   const clickHandler  =()=>{
     alert('Hello world')
   }
-  const {img, title, author} = props.book;
   return (
   <article className ='book'>
     <img src= {img} alt="book" />
     <h1>{author}</h1>
-    <h2>{ title }</h2>
+    <h2 onClick={()=> console.log(title)}>{ title }</h2>
     <button type="button" onClick ={clickHandler}>Reference example</button>
   </article>)
 }
